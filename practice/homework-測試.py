@@ -20,7 +20,7 @@ url_A ='https://www.104.com.tw/jobs/search/?ro=0&kwop=7&keyword=%E6%95%B8%E6%93%
 
 url_B = '&mode=s&jobsource=keyword2Keyword'
 
-userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'
 headers = {'User-Agent' : userAgent}
     
 
@@ -66,9 +66,9 @@ for page in range(1,19+1):
 
     time.sleep(random.randint(1,3))
              
-fn='104測試.csv'                                             #取CSV檔名
+document='104測試.csv'                                             #取CSV檔名
 columns_name=['公司名稱','職缺內容','工作內容','地址','工作經歷','學歷','薪資','網址']                     #第一欄的名稱
-with open(fn,'w',newline='',encoding='utf_8_sig') as csvFile:               #定義CSV的寫入檔,並且每次寫入完會換下一行
+with open(document,'w',newline='',encoding='utf_8_sig') as csvFile:               #定義CSV的寫入檔,並且每次寫入完會換下一行
     dictWriter = csv.DictWriter(csvFile,fieldnames=columns_name)            #定義寫入器
     dictWriter.writeheader()       
     for data in all_job_datas:
